@@ -1,6 +1,6 @@
 package cita.rasa.nusantara.models;
 
-import citarasa.abstract_class.Customer;
+import cita.rasa.nusantara.abstract_class.Customer;
 
 public class RegularCustomer extends Customer {
     public RegularCustomer(String name) {

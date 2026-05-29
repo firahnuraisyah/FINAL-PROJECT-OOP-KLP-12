@@ -4,8 +4,10 @@
 [versions]
 guava = "33.4.6-jre"
 junit-jupiter = "5.12.1"
+sqlite-jdbc = "3.45.3.0"
 
 [libraries]
 guava = { module = "com.google.guava:guava", version.ref = "guava" }
 junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit-jupiter" }
+sqlite-jdbc = { group = "org.xerial", name = "sqlite-jdbc", version.ref = "sqlite-jdbc" }
 

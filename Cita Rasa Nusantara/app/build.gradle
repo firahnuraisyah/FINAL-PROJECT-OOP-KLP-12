@@ -18,12 +18,11 @@ repositories {
 
 dependencies {
     // Use JUnit Jupiter for testing.
-    // testImplementation libs.junit.jupiter
-
+    testImplementation libs.junit.jupiter
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 
-    // This dependency is used by the application.
-    implementation libs.guava
+    // SQLite JDBC
+    implementation libs.sqlite.jdbc
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
@@ -40,5 +39,5 @@ application {
 
 javafx {
     version = "21"
-    modules = ['javafx.controls']
+    modules = ['javafx.controls', 'javafx.graphics', 'javafx.base']
 }

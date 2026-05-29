@@ -1,6 +1,6 @@
 package cita.rasa.nusantara.abstract_class;
 
-import citarasa.models.CartItem;
+import cita.rasa.nusantara.models.CartItem;
 import java.util.List;
 
 public abstract class DaoForCart {

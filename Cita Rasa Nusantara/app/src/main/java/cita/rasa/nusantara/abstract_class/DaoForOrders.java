@@ -1,7 +1,7 @@
 package cita.rasa.nusantara.abstract_class;
 
-import citarasa.models.Order;
-import citarasa.models.OrderItem;
+import cita.rasa.nusantara.models.Order;
+import cita.rasa.nusantara.models.OrderItem;
 
 public abstract class DaoForOrders {
     public abstract int saveOrder(Order order);

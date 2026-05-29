@@ -1,6 +1,6 @@
 package cita.rasa.nusantara.abstract_class;
 
-import citarasa.models.Food;
+import cita.rasa.nusantara.models.Food;
 import java.util.List;
 
 public abstract class DaoForFoods {
