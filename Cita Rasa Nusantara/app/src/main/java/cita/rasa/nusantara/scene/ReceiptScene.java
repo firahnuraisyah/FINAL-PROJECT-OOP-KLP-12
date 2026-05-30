@@ -2,7 +2,6 @@ package cita.rasa.nusantara.scene;
 
 import cita.rasa.nusantara.components.Navbar;
 import cita.rasa.nusantara.services.CartService;
-import cita.rasa.nusantara.utils.CurrencyUtil;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
