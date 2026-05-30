@@ -10,8 +10,7 @@ public class DatabaseConfig {
 
     static {
         
-        try (Connection conn = getConnection(); Statement stmt = conn.createStatement()) {
-            
+        try (Connection conn = getConnection(); Statement stmt = conn.createStatement()) {         
             
             stmt.execute("CREATE TABLE IF NOT EXISTS foods (" +
                     "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
@@ -21,23 +20,20 @@ public class DatabaseConfig {
                     "island TEXT, " +
                     "city TEXT, " +
                     "image_path TEXT)");
-
             
             stmt.execute("CREATE TABLE IF NOT EXISTS cart (" +
                     "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
                     "food_id INTEGER NOT NULL, " +
                     "quantity INTEGER NOT NULL, " +
                     "FOREIGN KEY (food_id) REFERENCES foods(id))");
-
             
             stmt.execute("CREATE TABLE IF NOT EXISTS orders (" +
                     "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
                     "recipient_name TEXT NOT NULL, " +
-                    "customer_type TEXT NOT NULL, " + // Menyimpan tipe: Regular, Member, VIP
+                    "customer_type TEXT NOT NULL, " + 
                     "total_amount REAL NOT NULL, " +
                     "order_date TEXT NOT NULL, " +
-                    "table_number TEXT NOT NULL)"); // Menyimpan nomor meja terpilih
-
+                    "table_number TEXT NOT NULL)"); 
             
             stmt.execute("CREATE TABLE IF NOT EXISTS order_items (" +
                     "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
@@ -47,27 +43,22 @@ public class DatabaseConfig {
                     "price REAL NOT NULL, " +
                     "FOREIGN KEY (order_id) REFERENCES orders(id), " +
                     "FOREIGN KEY (food_id) REFERENCES foods(id))");
-
             
             stmt.execute("CREATE TABLE IF NOT EXISTS users (" +
                     "username TEXT PRIMARY KEY, " +
                     "password TEXT NOT NULL, " +
-                    "role TEXT NOT NULL)"); // admin / customer
+                    "role TEXT NOT NULL)"); 
 
-            
             stmt.execute("CREATE TABLE IF NOT EXISTS restaurant_tables (" +
                     "table_number TEXT PRIMARY KEY, " +
-                    "status TEXT NOT NULL DEFAULT 'TERSEDIA')"); // TERSEDIA / DIGUNAKAN
-
+                    "status TEXT NOT NULL DEFAULT 'TERSEDIA')"); 
             
             stmt.execute("INSERT OR IGNORE INTO restaurant_tables (table_number, status) VALUES " +
                     "('Meja 01', 'TERSEDIA'), ('Meja 02', 'TERSEDIA'), " +
                     "('Meja 03', 'TERSEDIA'), ('Meja 04', 'TERSEDIA'), ('Meja 05', 'TERSEDIA')");
-
             
             stmt.execute("INSERT OR IGNORE INTO users (username, password, role) VALUES " +
                     "('admin', 'admin123', 'admin'), ('customer', 'user123', 'customer')");
-
             
             stmt.execute("INSERT OR IGNORE INTO foods (id, name, description, price, island, city, image_path) VALUES " +
                     "(1, 'Coto Makassar', 'Sup daging sapi kaya rempah khas Makassar', 35000, 'Sulawesi', 'Makassar', '/images/coto.jpg'), " +

@@ -1,4 +1,4 @@
-package citarasa.scene;
+package cita.rasa.nusantara.scene;
 
 import javafx.stage.Stage;
 
@@ -33,16 +33,13 @@ public class ShowScene {
         ReceiptScene receiptScene = new ReceiptScene(orderId);
         applyScene(receiptScene.getScene());
     }
-
     
     private static void applyScene(javafx.scene.Scene newScene) {
         if (stage != null) {
           
             boolean isMaximized = stage.isMaximized();
             
-            stage.setScene(newScene);
-            
-            
+            stage.setScene(newScene);                     
             stage.setMaximized(isMaximized);
             stage.show();
         }

@@ -1,6 +1,6 @@
-package citarasa.scene;
+package cita.rasa.nusantara.scene;
 
-import citarasa.controllers.LoginController;
+import cita.rasa.nusantara.controllers.LoginController;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -21,14 +21,12 @@ public class LoginScene {
         root.setAlignment(Pos.CENTER);
         root.setSpacing(15);
         root.setPadding(new Insets(30));
-
        
         Label lblTitle = new Label("CITA RASA NUSANTARA");
         lblTitle.getStyleClass().add("header-title");
 
         Label lblSubtitle = new Label("Silakan masuk ke akun Anda");
         lblSubtitle.getStyleClass().add("header-tagline");
-
        
         TextField txtUsername = new TextField();
         txtUsername.setPromptText("Username");
@@ -39,23 +37,18 @@ public class LoginScene {
         txtPassword.setPromptText("Password");
         txtPassword.getStyleClass().add("custom-textfield");
         txtPassword.setMaxWidth(300);
-
        
         Button btnLogin = new Button("MASUK");
         btnLogin.getStyleClass().add("btn-checkout");
         btnLogin.setMaxWidth(300);
-
        
         btnLogin.setOnAction(e -> {
             loginController.handleLogin(txtUsername.getText(), txtPassword.getText());
         });
-
         
         root.getChildren().addAll(lblTitle, lblSubtitle, txtUsername, txtPassword, btnLogin);
-
         
         this.scene = new Scene(root, 400, 500);
-        
 
         if (getClass().getResource("/style.css") != null) {
             this.scene.getStylesheets().add(getClass().getResource("/style.css").toExternalForm());

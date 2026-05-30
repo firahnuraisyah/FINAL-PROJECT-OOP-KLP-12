@@ -1,4 +1,4 @@
-package citarasa.services;
+package cita.rasa.nusantara.services;
 
 import cita.rasa.nusantara.utils.DatabaseConfig;
 import java.sql.Connection;

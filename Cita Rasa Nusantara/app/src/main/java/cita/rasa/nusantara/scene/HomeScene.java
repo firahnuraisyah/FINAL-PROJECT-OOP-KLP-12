@@ -1,9 +1,9 @@
-package citarasa.scene;
+package cita.rasa.nusantara.scene;
 
-import citarasa.components.FoodCard;
-import citarasa.components.Navbar;
-import citarasa.dao.FoodDao;
-import citarasa.models.Food;
+import cita.rasa.nusantara.components.FoodCard;
+import cita.rasa.nusantara.components.Navbar;
+import cita.rasa.nusantara.dao.FoodDao;
+import cita.rasa.nusantara.models.Food;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -42,7 +42,6 @@ public class HomeScene {
 
         headerBox.getChildren().addAll(lblTitle, lblSubtitle);
 
-        // --- TOMBOL FILTER WILAYAH ---
         HBox filterBox = new HBox(10);
         filterBox.setPadding(new Insets(10, 20, 10, 20));
         filterBox.setAlignment(Pos.CENTER_LEFT);
@@ -87,10 +86,8 @@ public class HomeScene {
         scrollPane.setFitToWidth(true);
         root.setCenter(scrollPane);
 
-       
         Navbar navbar = new Navbar();
         root.setBottom(navbar);
-
         
         this.scene = new Scene(root);
 

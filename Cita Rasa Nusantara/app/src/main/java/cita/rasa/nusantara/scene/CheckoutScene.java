@@ -1,10 +1,10 @@
-package citarasa.scene;
+package cita.rasa.nusantara.scene;
 
-import citarasa.components.Navbar;
-import citarasa.controllers.CheckoutController;
-import citarasa.services.CartService;
-import citarasa.services.TableService;
-import citarasa.utils.CurrencyUtil;
+import cita.rasa.nusantara.components.Navbar;
+import cita.rasa.nusantara.controllers.CheckoutController;
+import cita.rasa.nusantara.services.CartService;
+import cita.rasa.nusantara.services.TableService;
+import cita.rasa.nusantara.utils.CurrencyUtil;
 import javafx.collections.FXCollections;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;

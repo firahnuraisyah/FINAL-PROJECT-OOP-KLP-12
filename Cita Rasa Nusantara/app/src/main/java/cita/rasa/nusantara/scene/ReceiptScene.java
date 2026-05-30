@@ -1,8 +1,8 @@
-package citarasa.scene;
+package cita.rasa.nusantara.scene;
 
-import citarasa.components.Navbar;
-import citarasa.services.CartService;
-import citarasa.utils.CurrencyUtil;
+import cita.rasa.nusantara.components.Navbar;
+import cita.rasa.nusantara.services.CartService;
+import cita.rasa.nusantara.utils.CurrencyUtil;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -14,12 +14,10 @@ import javafx.scene.layout.VBox;
 public class ReceiptScene {
     private Scene scene;
     private CartService cartService = new CartService();
-
     
     public ReceiptScene(int orderId) {
         BorderPane root = new BorderPane();
         root.getStyleClass().add("main-container");
-
         
         VBox receiptContainer = new VBox();
         receiptContainer.setPadding(new Insets(40, 20, 40, 20));
@@ -31,7 +29,6 @@ public class ReceiptScene {
         receiptBox.setMaxWidth(450);
         receiptBox.setPadding(new Insets(30));
         receiptBox.setAlignment(Pos.TOP_CENTER);
-
        
         Label lblSuccess = new Label("✓ PESANAN BERHASIL DICATAT");
         lblSuccess.getStyleClass().add("food-price"); 
@@ -42,7 +39,6 @@ public class ReceiptScene {
 
         Label lblLine = new Label("--------------------------------------------");
         lblLine.setStyle("-fx-text-fill: #E2D6CA;");
-
        
         Label lblInstructionTitle = new Label("PETUNJUK PEMBAYARAN KASIR");
         lblInstructionTitle.getStyleClass().add("category-label");
@@ -56,7 +52,6 @@ public class ReceiptScene {
         lblInstructionBody.getStyleClass().add("food-desc");
         lblInstructionBody.setWrapText(true);
         lblInstructionBody.setStyle("-fx-font-size: 13px; -fx-line-spacing: 5px;");
-
        
         Button btnDone = new Button("SELESAI & KEMBALI KEBENRANDA");
         btnDone.getStyleClass().add("btn-checkout");
@@ -65,7 +60,6 @@ public class ReceiptScene {
             cartService.clearCart(); 
             ShowScene.toHome();
         });
-
         
         receiptBox.getChildren().addAll(
             lblSuccess, 
@@ -79,11 +73,9 @@ public class ReceiptScene {
         
         receiptContainer.getChildren().add(receiptBox);
         root.setCenter(receiptContainer);
-
         
         Navbar navbar = new Navbar();
         root.setBottom(navbar);
-
        
         this.scene = new Scene(root, 1024, 768);
 

@@ -1,6 +1,6 @@
-package citarasa.services;
+package cita.rasa.nusantara.services;
 
-import citarasa.utils.DatabaseConfig;
+import cita.rasa.nusantara.utils.DatabaseConfig;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -10,7 +10,6 @@ import java.util.List;
 
 public class TableService {
 
-  
     public List<String> getAvailableTables() {
         List<String> tables = new ArrayList<>();
         String query = "SELECT table_number FROM restaurant_tables WHERE status = 'TERSEDIA'";
@@ -27,7 +26,6 @@ public class TableService {
         }
         return tables;
     }
-
     
     public void occupyTable(String tableNumber) {
         String query = "UPDATE restaurant_tables SET status = 'DIGUNAKAN' WHERE table_number = ?";
